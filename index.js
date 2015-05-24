@@ -53,7 +53,7 @@ docReady( function() {
     if(!addVideo){
       var fileName = "zo_" + i;
 
-      $itemContent.style.background = 'url(https://console.developers.google.com/m/cloudstorage/b/ladusoleil/o/photos/' + fileName + '.jpg)  50% 50%';
+      $itemContent.style.background = 'url(photos/' + fileName + '.jpg)  50% 50%';
       $itemContent.style.backgroundSize = 'cover';
       $itemContent.style.backgroundRepeat = 'no-repeat';
     }else{
