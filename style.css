@@ -1,0 +1,121 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.intro{
+   opacity:    0.85; 
+  background: #000; 
+  width:      100%;
+  height:     100%; 
+  z-index:    10;
+  top:        0; 
+  left:       0; 
+  position:   fixed; 
+  text-align: center;
+  -webkit-transition: opacity 1s;
+     -moz-transition: opacity 1s;
+       -o-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
+.intro h1{
+  color: wheat;
+  line-height: 51px;
+}
+.intro >*{
+  position: relative;
+  margin: 0 auto;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.intro .welcome{
+  position: relative;
+  margin: 0 auto;
+  margin: auto;
+  vertical-align: middle;
+  top: 20%;
+}
+
+.packery {
+  background: black;
+  /*background: hsla(45, 100%, 40%, 0.2);
+  /*max-width: 520px;*/
+}
+
+.stamp {
+  position: absolute;
+  left: 400px;
+  top: 200px;
+  width: 600px;
+  height: 400px;
+  background: black;
+  border: 4px dotted white;
+}
+
+video{
+  height: 100%;
+  width: 100%;
+}
+/* clearfix */
+.packery:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.item-video-p{
+  width: 200px;
+  height: 400px
+}
+
+.item-video-l{
+  width: 400px;
+  height: 200px
+}
+
+.item-image {
+  width: 200px;
+  height: 200px;
+}
+
+.item-content {
+  background: #09D;
+  border: 4px solid #333;
+  border-color: hsla(0, 0%, 100%, 0.4);
+  -webkit-transition: width 0.4s, height 0.4s;
+     -moz-transition: width 0.4s, height 0.4s;
+       -o-transition: width 0.4s, height 0.4s;
+          transition: width 0.4s, height 0.4s;
+}
+
+/* both item and item content change size */
+.item.is-expanded,
+.item.is-expanded .item-content {
+  width: 400px;
+  height: 400px;
+}
+
+.item.is-expanded,
+.item.is-expanded .item-video-l {
+  width: 550px;
+  height: 350px;
+}
+
+.item:hover { cursor: pointer; }
+
+.item:hover .item-content {
+  border-color: white;
+}
+
+.item.is-expanded {
+  z-index: 2;
+}
+
+.item.is-expanded .item-content {
+  background: #C90;
+}
