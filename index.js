@@ -2,17 +2,19 @@
 
 var VIDEOS = {
   '16':{
-  name : 'lyon.webm',
+  file : 'lyon.webm',
   landscape : true,
- 
 },'5':{
-  name : 'samemma.webm',
+  file : 'samemma.webm',
   landscape : false
+},'10':{
+  file : 'luna.mp4',
+  landscape : true
 }, '20':{
-  name : 'sarouche.webm',
+  file : 'sarouche.webm',
   landscape : true
 },'17':{
-  name : 'lea.mp4',
+  file : 'lea.mp4',
   landscape : false
 }};
 
@@ -38,7 +40,7 @@ docReady( function() {
     itemSelector: '.item'
   });
 
-  for (var i = 24 - 1; i >= 0; i--) {
+  for (var i = 25 - 1; i >= 0; i--) {
 
     var addVideo = VIDEOS[i] != undefined;
     var $class = addVideo ? "item-video" : "item-image"; 
@@ -58,10 +60,10 @@ docReady( function() {
       $itemContent.style.backgroundRepeat = 'no-repeat';
     }else{
       var videoFile = VIDEOS[i];
-      var fileName = videoFile.name;
+      var fileName = videoFile.file;
 
       var $video = document.createElement('video');
-      $video.src = 'https://console.developers.google.com/m/cloudstorage/b/ladusoleil/o/' + fileName;
+      $video.src = 'http://storage.googleapis.com/ladusoleil/' + fileName;
       $video.autoPlay = false;
       $video.innerHTML = 'Votre navigateur ne gère pas l\'élément <code>video</code>.'
       $video.setAttribute("controls","controls")  
@@ -128,8 +130,10 @@ docReady( function() {
       pckry.stamp(stampElem); 
       pckry.layout();
       
-      document.querySelector('.stamp').play();
-     
+      
+      var youtubeVid = document.querySelector('.stamp');
+      youtubeVid.setAttribute('src',youtubeVid.getAttribute('src')+ '?autoplay=1');
+
     }, 1000);
   }, 6000);
 
