@@ -117,6 +117,9 @@ docReady( function() {
     });
   }, 1000);
 
+  //var goButton = document.querySelector('.go-button');
+  //goButton.onclick = function () { alert(this.innerHTML); };
+  
   setTimeout(function(){ 
 
     clearInterval(updateLang);
