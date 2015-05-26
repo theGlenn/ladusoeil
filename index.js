@@ -4,17 +4,20 @@ var VIDEOS = {
   '16':{
   file : 'lyon.webm',
   landscape : true,
-},'5':{
+},'10':{
   file : 'samemma.webm',
   landscape : false
-},'10':{
+},'18':{
   file : 'luna.mp4',
   landscape : true
-}, '20':{
+}, '23':{
   file : 'sarouche.webm',
   landscape : true
 },'17':{
   file : 'lea.mp4',
+  landscape : false
+},'20':{
+  file : 'claret.mp4',
   landscape : false
 }};
 
