@@ -2,23 +2,35 @@
 
 var VIDEOS = {
   '16':{
+  user : "Les Lyonais",
   file : 'lyon.webm',
   landscape : true,
+  color : 'E17B38',
 },'10':{
+  user : "Sam & Emma",
   file : 'samemma.webm',
-  landscape : false
+  landscape : false,
+  color : 'E17B38',
 },'18':{
+  user : "Luna",
   file : 'luna.mp4',
-  landscape : true
+  landscape : true,
+  color : 'E17B38',
 }, '23':{
+  user : "Sarouche",
   file : 'sarouche.webm',
-  landscape : true
+  landscape : true,
+  color : 'E17B38',
 },'17':{
+  user : "Léa",
   file : 'lea.mp4',
-  landscape : false
+  landscape : false,
+  color : 'E17B38',
 },'20':{
+  user : "Thomas",
   file : 'claret.mp4',
-  landscape : false
+  landscape : false,
+  color : 'E17B38',
 }};
 
 var BIRTHDAYS = [
@@ -76,12 +88,26 @@ docReady( function() {
       });
 
       var or = videoFile.landscape ? 'l' : 'p';
-
       $itemContent.classList.add('item-video-' + or);
+      
+      var $nameContainer = document.createElement('div');
+      $nameContainer.classList.add('item-name-container');
+
+      var $name = document.createElement('h2');
+      $name.innerHTML = videoFile.user;
+      $nameContainer.appendChild($name);
+
+      var $overLay = document.createElement('div');
+      $overLay.classList.add('item-overlay');
+      $overLay.appendChild($nameContainer);
+      $overLay.style.background = "#" + videoFile.color ;
+
+      $itemContent.appendChild($overLay);
       $itemContent.appendChild($video);
     }
 
     $item.appendChild($itemContent);
+    
     container.appendChild($item);
     pckry.appended( $item );
   };
