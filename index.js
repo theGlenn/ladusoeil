@@ -54,7 +54,7 @@ var VIDEOS = {
     landscape : true,
     color : COLORS[4],
   },'18':{
-    user : "Léa",
+    user : "L&eacute;a",
     file : 'lea.mp4',
     landscape : false,
     color :  COLORS[5],
@@ -160,7 +160,7 @@ var VIDEOS = {
           var $video = document.createElement('video');
           $video.src = 'http://storage.googleapis.com/ladusoleil/' + fileName;
           $video.autoPlay = false;
-          $video.innerHTML = 'Votre navigateur ne gère pas l\'élément <code>video</code>.'
+          $video.innerHTML = 'Votre navigateur ne gère pas l\'&eacute;l&eacute;ment <code>video</code>.'
           $video.setAttribute("controls","controls")  
 
           $video.addEventListener('error', function (e) {
@@ -215,80 +215,32 @@ var VIDEOS = {
       })(i);
     }
 
+    var $svgText = document.getElementById('l-text');
 
+    function closeIntro () {
+     var $intro = document.querySelector('.intro');
+     $intro.style.opacity = 0;
 
-  /*eventie.bind( container, 'click', function( event ) {
-
-    console.log('ok');
-
-    var target = event.target;
-    if ( !classie.has( target, 'item-video' )  ) {
-      return;
-    }
-
-    var itemElem = target.parentNode;
-    var overLayElem = itemElem.querySelector('selectors')
-    overLayElem.style.opacity = 0;
-
-    console.log(videoFile);
-  });*/
-  /*eventie.bind( container, 'click', function( event ) {
-
-    console.log('ok');
-
-    var target = event.target;
-    if ( !classie.has( target, 'item-content' )  ) {
-      return;
-    }
-    var itemElem = target.parentNode;
-    var isExpanded = classie.has( itemElem, 'is-expanded' );
-    classie.toggleClass( itemElem, 'is-expanded' );
-
-    pckry.stamp(stampElems); 
-
-    if ( isExpanded ) {
-      pckry.layout();
-    } else {
-      pckry.fit( itemElem );
-    }
-  });*/
-
-var $svgText = document.getElementById('l-text');
-
-
-var updateLang = self.setInterval(function  () {
-
-  $svgText.classList.add('l-text-fading');
-
-  var lang = BIRTHDAYS[Math.floor(Math.random() * BIRTHDAYS.length)]
-    //$svgText.textContent = lang;
-
-    setTimeout(function(){
-      //$svgText.classList.remove("l-text-fading");     
-    });
-  }, 1000);
-
-  //var goButton = document.querySelector('.go-button');
-  //goButton.onclick = function () { alert(this.innerHTML); };
-  
-  setTimeout(function(){ 
-
-    clearInterval(updateLang);
-
-    var $intro = document.querySelector('.intro');
-    $intro.style.opacity = 0;
-    
-    setTimeout(function(){ 
+     setTimeout(function(){ 
       document.body.removeChild(document.querySelector('.intro'));
 
       pckry.stamp(stampElems); 
       pckry.layout();
-      
-      
+
+
       var youtubeVid = document.querySelector('.stamp');
       youtubeVid.setAttribute('src',youtubeVid.getAttribute('src')+ '?autoplay=1');
 
     }, 1000);
-  }, 6000);
+   }
+
+   document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+      closeIntro();
+    }
+  };
+
+  setTimeout(closeIntro, 6000);
 
 });
