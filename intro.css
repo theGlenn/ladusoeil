@@ -1,7 +1,38 @@
 
 
-body {
-  font: 16em/1 Arial;
+.intro{
+   opacity:    0.85; 
+  background: #000; 
+  width:      100%;
+  height:     100%; 
+  z-index:    10;
+  top:        0; 
+  left:       0; 
+  position:   fixed; 
+  text-align: center;
+  -webkit-transition: opacity 1s;
+     -moz-transition: opacity 1s;
+       -o-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
+.intro h1{
+  color: wheat;
+  line-height: 51px;
+}
+.intro >*{
+  position: relative;
+  margin: 0 auto;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.intro .welcome{
+  position: relative;
+  margin: 0 auto;
+  margin: auto;
+  vertical-align: middle;
+  top: 20%;
 }
 
 .text--line {
@@ -19,8 +50,8 @@ svg {
   stroke: white;
   stroke-dasharray: 7% 28%;
   stroke-width: 3px;
-  -webkit-animation: stroke-offset 5s linear;
-          animation: stroke-offset 5s linear;
+  -webkit-animation: stroke-offset 1.5s linear;
+          animation: stroke-offset 1.5s linear;
 }
 .text-copy:nth-child(1) {
   stroke: #360745;
