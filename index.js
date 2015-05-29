@@ -160,12 +160,20 @@ var VIDEOS = {
           var $video = document.createElement('video');
           $video.src = 'http://storage.googleapis.com/ladusoleil/' + fileName;
           $video.autoPlay = false;
-          $video.innerHTML = 'Votre navigateur ne gère pas l\'&eacute;l&eacute;ment <code>video</code>.'
-          $video.setAttribute("controls","controls")  
+          $video.innerHTML = 'Votre navigateur ne gère pas l\'&eacute;l&eacute;ment <code>video</code>.';
+          $video.setAttribute("controls","controls") ; 
 
           $video.addEventListener('error', function (e) {
             console.log(e.target.error);
           });
+
+          if ($video.requestFullscreen) {
+            $video.requestFullscreen();
+          } else if ($video.mozRequestFullScreen) {
+            $video.mozRequestFullScreen();
+          } else if ($video.webkitRequestFullscreen) {
+            $video.webkitRequestFullscreen();
+          }
 
           var or = videoFile.landscape ? 'l' : 'p';
           $itemContent.classList.add('item-video-' + or);
