@@ -41,6 +41,11 @@ body { font-family: sans-serif; }
   top: 20%;
 }
 
+.image-container {
+  position: absolute;
+  width: 120%;
+}
+
 .packery {
   background: black;
   /*background: hsla(45, 100%, 40%, 0.2);
@@ -48,12 +53,15 @@ body { font-family: sans-serif; }
 }
 
 .stamp {
+  background: black;
   position: absolute;
+}
+
+.main-video{
   left: 400px;
   top: 200px;
   width: 600px;
   height: 400px;
-  background: black;
   border: 4px dotted white;
 }
 
@@ -73,6 +81,14 @@ video{
   content: ' ';
   display: block;
   clear: both;
+}
+
+.item-video-stamp{
+  position: absolute;
+  right: 0px;
+  top:0px;
+  width: 200px;
+  height: 200px;
 }
 
 .item-video-p{
