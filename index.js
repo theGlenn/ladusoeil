@@ -49,7 +49,7 @@ var VIDEOS = {
     landscape : false,
     color : COLORS[2],
   },'16':{
-    user : "Les Lyonais",
+    user : "Theo, Lou & Salom&eacute;",
     file : 'lyon.webm',
     landscape : true,
     color : COLORS[4],
@@ -234,7 +234,7 @@ var VIDEOS = {
     }, 1000);
    }
 
-   document.onkeydown = function(evt) {
+  document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
       closeIntro();
